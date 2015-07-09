@@ -7,12 +7,11 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'chocolatey'
+include_recipe 'windows'
 
-if node['resharper']['version'] == :latest
-  chocolatey 'resharper'
-else
-  chocolatey 'resharper' do
-    version node['resharper']['version']
-  end
+windows_package 'Resharper 9' do
+  source "http://download.jetbrains.com/resharper/JetBrains.ReSharper#{node['resharper']['variant']}.#{node['resharper']['version']}.exe"
+  installer_type :custom
+  options "/SpecificProductNames=ReSharper /Silent=True /VsVersion=12"
+  action :install
 end

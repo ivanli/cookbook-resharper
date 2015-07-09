@@ -7,7 +7,7 @@ Requirements
 Runs on windows. 
 
 #### packages
-- `chocolatey` - resharper needs chocolatey to install chocolatey packages.
+- `windows` - resharper needs windows to install from downloaded package.
 
 Attributes
 ----------
